@@ -35,11 +35,19 @@ jobs:
       - name: Build map
         env:
           # main.py reads these exact lowercase names, same as the local .env
-          login: ${{ secrets.RBA_LOGIN }}
-          password: ${{ secrets.RBA_PASSWORD }}
+          login: ${{ secrets.SITE_LOGIN }}
+          password: ${{ secrets.SITE_PASSWORD }}
+          login_url: ${{ secrets.LOGIN_URL }}
+          home_url: ${{ secrets.HOME_URL }}
+          data_url: ${{ secrets.DATA_URL }}
+          WORKER_URL: ${{ secrets.WORKER_URL }}
           OUTPUT_DIR: site
           INCLUDE_YESTERDAY: ${{ inputs.include_yesterday }}
         run: python main.py
+
+      - name: Block search engines
+        run: |
+          printf 'User-agent: *\nDisallow: /\n' > site/robots.txt
 
       - uses: actions/upload-pages-artifact@v3
         with:
