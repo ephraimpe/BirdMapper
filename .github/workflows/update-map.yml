@@ -1,10 +1,13 @@
 name: Update bird map
 
 on:
-  schedule:
-    # Hourly at :17 past, 05:17 to 21:17 UTC (saves Actions minutes overnight)
-    - cron: "17 5-21 * * *"
-  workflow_dispatch: # adds a "Run workflow" button for a manual refresh
+  # Manual only: Actions tab -> "Update bird map" -> "Run workflow"
+  workflow_dispatch:
+    inputs:
+      include_yesterday:
+        description: "Include yesterday's sightings"
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -35,6 +38,7 @@ jobs:
           login: ${{ secrets.RBA_LOGIN }}
           password: ${{ secrets.RBA_PASSWORD }}
           OUTPUT_DIR: site
+          INCLUDE_YESTERDAY: ${{ inputs.include_yesterday }}
         run: python main.py
 
       - uses: actions/upload-pages-artifact@v3

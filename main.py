@@ -17,7 +17,9 @@ data_url = "https://www.rarebirdalert.co.uk/RealData/rssnewsitems.asp"
 
 load_dotenv()
 
-include_yesterday = True
+# True keeps yesterday's sightings on the map, False shows today's only.
+# Set INCLUDE_YESTERDAY=false in .env (or the workflow's checkbox) to change it.
+include_yesterday = (os.getenv("INCLUDE_YESTERDAY") or "true").strip().lower() == "true"
 
 def get_login():
     return os.getenv("login")
