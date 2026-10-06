@@ -6,16 +6,21 @@ import pandas as pd
 import folium
 from folium.plugins import MarkerCluster
 import webbrowser
+import sys
 
 # Start a session so cookies persist
 session = requests.Session()
 
-# URLs
-login_url = "https://www.rarebirdalert.co.uk/RealData/Login.asp"
-home_url = "https://www.rarebirdalert.co.uk/RealData/myhome.asp"
-data_url = "https://www.rarebirdalert.co.uk/RealData/rssnewsitems.asp"
-
 load_dotenv()
+
+# URLs come from .env locally, or from the repo secrets on GitHub
+login_url = os.getenv("login_url")
+home_url = os.getenv("home_url")
+data_url = os.getenv("data_url")
+
+missing = [name for name in ("login", "password", "login_url", "home_url", "data_url") if not os.getenv(name)]
+if missing:
+    sys.exit("Missing settings: " + ", ".join(missing) + " (add them to .env or the repo secrets)")
 
 # True keeps yesterday's sightings on the map, False shows today's only.
 # Set INCLUDE_YESTERDAY=false in .env (or the workflow's checkbox) to change it.
@@ -37,7 +42,10 @@ payload = {
 
 resp = session.post(login_url, data=payload, allow_redirects=True)
 
-if "myhome.asp" in resp.url or "Logout" in resp.text:
+# the home page's file name, e.g. the last part of home_url
+home_page = home_url.rstrip("/").rsplit("/", 1)[-1]
+
+if home_page in resp.url or "Logout" in resp.text:
     print("Logged in successfully")
 else:
     print("Login failed, check login details")
@@ -66,7 +74,7 @@ df = pd.DataFrame({'data':new_df['data'].iloc[::2].values, 'Info':new_df['data']
 split_data = df['data'].str.split(',', expand=True).rename(columns={0:'Bird',1:'Site',2:'County'})
 split_bird = split_data['Bird'].str.split('  ', expand=True).rename(columns={0:'Time',1:'Bird'})
 
-# concat all RBA data to one dataframe
+# concat all sighting data to one dataframe
 complete_data = pd.concat([split_bird['Time'],split_bird['Bird'],split_data['Site'],split_data['County'],df['Info']], sort=False, axis=1)
 
 if include_yesterday:
@@ -87,6 +95,9 @@ bird_status = pd.read_csv('bird_status.csv')
 
 # create map to mark locations on location is map centre, tiles is map style, and zoom_start is start zoom
 m = folium.Map(location=[55.3781,-2], tiles='OpenStreetMap', zoom_start = 5)
+
+# ask search engines not to index the published map
+m.get_root().header.add_child(folium.Element('<meta name="robots" content="noindex, nofollow">'))
 markerCluster = MarkerCluster().add_to(m)
 
 # loop through each location to mark map
