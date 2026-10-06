@@ -40,8 +40,6 @@ if "myhome.asp" in resp.url or "Logout" in resp.text:
 else:
     print("Login failed, check login details")
 
-r = session.get(data_url)
-
 response = session.get(data_url)
 soup = bs(response.text, 'html.parser')
 
@@ -109,10 +107,15 @@ for i,row in data_loc.iterrows():
 
     folium.Marker(location=[lat,lng], popup = popup, icon = folium.Icon(color=color)).add_to(markerCluster)
 
-m.save('index.html')
+# OUTPUT_DIR lets the GitHub Actions run save the map into the folder it publishes
+output_dir = os.getenv("OUTPUT_DIR", ".")
+os.makedirs(output_dir, exist_ok=True)
+file_path = os.path.join(output_dir, 'index.html')
+m.save(file_path)
 
-file_path = 'index.html'  # relative path
-abs_path = os.path.abspath(file_path)
-url = "file://" + abs_path
+# only open a browser when running locally; servers have no browser
+if not os.getenv("CI"):
+    abs_path = os.path.abspath(file_path)
+    url = "file://" + abs_path
 
-webbrowser.open(url)
+    webbrowser.open(url)
