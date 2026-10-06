@@ -1,0 +1,622 @@
+﻿Bird,Status
+Capercaillie,Re-introduced Breeder
+Black Grouse,Resident Breeder
+Ptarmigan,Resident Breeder
+Red Grouse,Resident Breeder
+Red-legged Partridge,Introduced Breeder
+Grey Partridge,Resident/Introduced Breeder
+Quail,Migrant Breeder
+Pheasant,Introduced Breeder
+Golden Pheasant,Introduced Breeder
+Lady Amherst’s Pheasant,Introduced Breeder
+Brent Goose,Winter Visitor
+Red-breasted Goose,Accidental
+Canada Goose,"Introduced Breeder, Accidental"
+Cackling Goose,Accidental
+Barnacle Goose,"Escaped Breeder, Winter Visitor"
+Snow Goose,Scarce Visitor
+Greylag Goose,"Introduced/Resident Breeder, Winter Migrant"
+Taiga Bean Goose,Winter Migrant
+Tundra Bean Goose,Winter Migrant
+Pink-footed Goose,Winter Migrant
+White-fronted Goose,Winter Migrant
+Lesser White-fronted Goose,Accidental
+Mute Swan,Resident/Introduced Breeder
+Bewick's Swan,Winter Migrant
+Whooper Swan,"Scarce Breeder, Winter Migrant"
+Egyptian Goose,Introduced Breeder
+Shelduck,"Migrant/Resident Breeder, Winter Visitor"
+Ruddy Shelduck,"Escaped, Former Visitor (Last Record 1946)"
+Mandarin Duck,Introduced Breeder
+Baikal Teal,Accidental
+Garganey,"Migrant Breeder, Passage Visitor"
+Blue-winged Teal,Scarce Visitor
+Shoveler,"Migrant Breeder, Passage/Winter Visitor"
+Gadwall,"Migrant/Resident Breeder, Winter Visitor"
+Falcated Duck,Accidental
+Wigeon,"Resident Breeder, Winter Visitor"
+American Wigeon,Scarce Visitor
+Mallard,"Introduced/Resident Breeder, Winter Visitor"
+American Black Duck,Accidental
+Pintail,"Resident/Migrant Breeder, Winter Visitor"
+Teal,"Resident Breeder, Passage/Winter Visitor"
+Green-winged Teal,Scarce Visitor
+Red-crested Pochard,"Escaped Breeder, Scarce Visitor"
+Canvasback,Accidental
+Redhead,Accidental
+Pochard,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Ferruginous Duck,Accidental
+Ring-necked Duck,Scarce Visitor
+Tufted Duck,"Resident Breeder, Passage/Winter Visitor"
+Scaup,"Scarce Breeder, Passage/Winter Visitor"
+Lesser Scaup,Scarce Visitor
+Steller’s Eider,Accidental
+King Eider,Accidental
+Eider,"Resident Breeder, Winter Visitor"
+Harlequin Duck,Accidental
+Surf Scoter,Scarce Visitor
+Velvet Scoter,Passage/Winter Visitor
+White-winged Scoter,Accidental
+Common Scoter,"Resident/Migrant Breeder, Passage/Winter Visitor"
+Black Scoter,Accidental
+Long-tailed Duck,"Scarce Breeder, Winter Visitor"
+Bufflehead,Accidental
+Goldeneye,"Resident Breeder, Passage/Winter Visitor"
+Barrow’s Goldeneye,Accidental
+Smew,Winter Visitor
+Hooded Merganser,Accidental
+Goosander,"Resident Breeder, Winter Visitor"
+Red-breasted Merganser,"Resident Breeder, Winter Visitor"
+Ruddy Duck,Introduced Breeder
+Common Nighthawk,Accidental
+Red-necked Nightjar,Not Recorded since 1856
+Nightjar,"Migrant Breeder, Passage Visitor"
+Egyptian Nightjar,Accidental
+White-throated Needletail,Accidental
+Chimney Swift,Accidental
+Alpine Swift,Scarce Visitor
+Swift,"Migrant Breeder, Passage Visitor"
+Pallid Swift,Accidental
+Pacific Swift,Accidental
+Little Swift,Accidental
+White-rumped Swift,Accidental
+Ruby-throated Hummingbird,"Reported, but does not occur"
+Great Bustard,"Re-introduced Breeder, Accidental"
+Macqueen’s Bustard,Accidental
+Little Bustard,Accidental
+Great Spotted Cuckoo,Accidental
+Yellow-billed Cuckoo,Accidental
+Black-billed Cuckoo,Accidental
+Cuckoo,"Migrant Breeder, Passage Visitor"
+Pallas’s Sandgrouse,"Accidental, Has Bred"
+Rock Dove,Resident Breeder
+Stock Dove,"Resident Breeder, Passage/Winter Visitor"
+Woodpigeon,"Resident Breeder, Winter Visitor"
+Turtle Dove,"Migrant Breeder, Passage Visitor"
+Oriental Turtle Dove,Accidental
+Collared Dove,Resident Breeder
+Mourning Dove,Accidental
+Water Rail,"Resident Breeder, Passage/Winter Visitor"
+Corncrake,"Migrant Breeder, Passage Visitor"
+Little Crake,Accidental
+Baillon’s Crake,"Occasional Breeder, Accidental"
+Spotted Crake,"Scarce Breeder, Passage Visitor"
+Sora,Accidental
+Western Swamphen,Accidental
+Allen’s Gallinule,Accidental
+American Purple Gallinule,Accidental
+Moorhen,"Resident Breeder, Winter Visitor"
+Coot,"Resident Breeder, Winter Visitor"
+American Coot,Accidental
+Sandhill Crane,Accidental
+Crane,"Resident/Re-introduced Breeder, Passage Visitor"
+Little Grebe,"Migrant/Resident Breeder, Winter Visitor"
+Pied-billed Grebe,Accidental
+Red-necked Grebe,"Scarce Breeder, Winter Visitor"
+Great Crested Grebe,"Resident Breeder, Winter Visitor"
+Slavonian Grebe,"Resident Breeder, Winter Visitor"
+Black-necked Grebe,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Stone-curlew,Migrant Breeder
+Oystercatcher,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Black-winged Stilt,"Scarce Visitor, Has Bred"
+Avocet,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Lapwing,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Sociable Lapwing,Accidental
+White-tailed Lapwing,Accidental
+Golden Plover,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Pacific Golden Plover,Accidental
+American Golden Plover,Scarce Visitor
+Grey Plover,Passage/Winter Visitor
+Ringed Plover,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Semipalmated Plover,Accidental
+Little Ringed Plover,"Migrant Breeder, Passage Visitor"
+Killdeer,Accidental
+Kentish Plover,"Former Breeder, Scarce Visitor"
+Lesser Sand Plover,Accidental
+Greater Sand Plover,Accidental
+Caspian Plover,Accidental
+Dotterel,"Migrant Breeder, Passage Visitor"
+Upland Sandpiper,Accidental
+Whimbrel,"Migrant Breeder, Passage Visitor"
+Little Curlew,Accidental
+Eskimo Curlew,"Extinct (1963), Last Record 1887"
+Curlew,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Bar-tailed Godwit,Passage/Winter Visitor
+Black-tailed Godwit,"Migrant Breeder, Passage/Winter Visitor"
+Hudsonian Godwit,Accidental
+Turnstone,"Scarce Breeder, Passage/Winter Visitor"
+Great Knot,Accidental
+Knot,Passage/Winter Visitor
+Ruff,"Scarce Breeder, Passage/Winter Visitor"
+Broad-billed Sandpiper,Accidental
+Sharp-tailed Sandpiper,Accidental
+Stilt Sandpiper,Accidental
+Curlew Sandpiper,Passage Visitor
+Temminck’s Stint,"Scarce Breeder, Passage Visitor"
+Long-toed Stint,Accidental
+Red-necked Stint,Accidental
+Sanderling,Passage/Winter Visitor
+Dunlin,"Migrant Breeder, Passage/Winter Visitor"
+Purple Sandpiper,"Scarce Breeder, Passage/Winter Visitor"
+Baird’s Sandpiper,Accidental
+Little Stint,Passage Visitor
+Least Sandpiper,Accidental
+White-rumped Sandpiper,Scarce Visitor
+Buff-breasted Sandpiper,Scarce Visitor
+Pectoral Sandpiper,"Scarce Visitor, Has probably bred"
+Semipalmated Sandpiper,Scarce Visitor
+Western Sandpiper,Accidental
+Long-billed Dowitcher,Accidental
+Short-billed Dowitcher,Accidental
+Woodcock,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Jack Snipe,Passage/Winter Visitor
+Great Snipe,Accidental
+Snipe,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Wilson's Snipe,Accidental
+Terek Sandpiper,Accidental
+Wilson’s Phalarope,Accidental
+Red-necked Phalarope,"Migrant Breeder, Passage Visitor"
+Grey Phalarope,Passage Visitor
+Common Sandpiper,"Migrant Breeder, Passage/Winter Visitor"
+Spotted Sandpiper,"Accidental, Has Bred"
+Green Sandpiper,"Scarce Breeder, Passage/Winter Visitor"
+Solitary Sandpiper,Accidental
+Grey-tailed Tattler,Accidental
+Lesser Yellowlegs,Accidental
+Redshank,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Marsh Sandpiper,Accidental
+Wood Sandpiper,"Scarce Breeder, Passage Visitor"
+Spotted Redshank,Passage/Winter Visitor
+Greenshank,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Greater Yellowlegs,Accidental
+Cream-coloured Courser,Accidental
+Collared Pratincole,Scarce Visitor
+Oriental Pratincole,Accidental
+Black-winged Pratincole,Accidental
+Kittiwake,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Ivory Gull,Accidental
+Sabine’s Gull,Passage Visitor
+Slender-billed Gull,Accidental
+Bonaparte’s Gull,Accidental
+Black-headed Gull,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Little Gull,"Scarce Breeder, Passage/Winter Visitor"
+Ross’s Gull,Accidental
+Laughing Gull,Accidental
+Franklin’s Gull,Accidental
+Audouin's Gull,Accidental
+Mediterranean Gull,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Great Black-headed Gull,Not Recorded since 1859
+Common Gull,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Ring-billed Gull,Scarce Visitor
+Great Black-backed Gull,"Resident Breeder, Winter Visitor"
+Glaucous-winged Gull,Accidental
+Glaucous Gull,Winter Visitor
+Iceland Gull,Winter Visitor
+Herring Gull,"Resident Breeder, Passage/Winter Visitor"
+American Herring Gull,Accidental
+Caspian Gull,Scarce Visitor
+Yellow-legged Gull,"Scarce Breeder, Passage/Winter Visitor"
+Slaty-backed Gull,Accidental
+Lesser Black-backed Gull,"Migrant/Resident Breeder, Passage Visitor"
+Gull-billed Tern,"Scarce Visitor, Has Bred"
+Caspian Tern,Accidental
+Royal Tern,Accidental
+Lesser Crested Tern,Accidental
+Sandwich Tern,"Migrant Breeder, Passage Visitor"
+Cabot's Tern,Accidental
+Elegant Tern,Accidental
+Little Tern,"Migrant Breeder, Passage Visitor"
+Least Tern,Accidental
+Aleutian Tern,Accidental
+Bridled Tern,Accidental
+Sooty Tern,Accidental
+Roseate Tern,"Migrant Breeder, Passage Visitor"
+Common Tern,"Migrant Breeder, Passage Visitor"
+Arctic Tern,"Migrant Breeder, Passage Visitor"
+Forster’s Tern,Accidental
+Whiskered Tern,Accidental
+White-winged Black Tern,Scarce Visitor
+Black Tern,"Former Breeder, Passage Visitor"
+Great Skua,"Migrant Breeder, Passage Visitor"
+Pomarine Skua,Passage Visitor
+Arctic Skua,"Migrant Breeder, Passage Visitor"
+Long-tailed Skua,"Passage Visitor, Has Bred"
+Little Auk,Passage/Winter Visitor
+Brünnich’s Guillemot,Accidental
+Guillemot,"Migrant/Resident Breeder, Winter Visitor"
+Razorbill,"Migrant/Resident Breeder, Winter Visitor"
+Great Auk,"Extinct (1844) Former Breeder, Last recorded 1840"
+Black Guillemot,Resident Breeder
+Long-billed Murrelet,Accidental
+Ancient Murrelet,Accidental
+Puffin,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Tufted Puffin,Accidental
+Red-billed Tropicbird,Accidental
+Ascension Frigatebird,Accidental
+Red-throated Diver,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Black-throated Diver,"Migrant/Resident Breeder, Winter Visitor"
+Pacific Diver,Accidental
+Great Northern Diver,"Scarce Breeder, Winter Visitor"
+White-billed Diver,Scarce Visitor
+Wilson’s Storm Petrel,Scarce Visitor
+White-faced Storm Petrel,Not Recorded since 1897
+Black-browed Albatross,Accidental
+Atlantic Yellow-nosed Albatross,Accidental
+Storm Petrel,Migrant Breeder
+Swinhoe’s Storm Petrel,Accidental
+Leach’s Petrel,"Migrant Breeder, Passage Visitor"
+Fulmar,"Migrant/Resident Breeder, Passage Visitor"
+Black-capped Petrel,Accidental
+Scopoli's Shearwater,Accidental
+Cory’s Shearwater,Scarce Migrant
+Sooty Shearwater,Passage Visitor
+Great Shearwater,Scarce Migrant
+Manx Shearwater,Migrant Breeder
+Yelkouan Shearwater,Accidental
+Balearic Shearwater,Passage Visitor
+Barolo Shearwater,Accidental
+Black Stork,Accidental
+White Stork,"Former Breeder, Scarce Visitor"
+Magnificent Frigatebird,Accidental
+Gannet,"Migrant/Resident Breeder, Passage Visitor"
+Red-footed Booby,Accidental
+Double-crested Cormorant,Accidental
+Shag,Resident Breeder
+Cormorant,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Glossy Ibis,Scarce Visitor
+Spoonbill,"Former, but now Scarce, Breeder, Scarce Visitor"
+Bittern,"Resident Breeder, Winter Visitor"
+American Bittern,Accidental
+Little Bittern,"Accidental, Has Bred"
+Night Heron,"Escaped Breeder, Scarce Visitor"
+Green Heron,Accidental
+Squacco Heron,Accidental
+Chinese Pond Heron,Accidental
+Cattle Egret,"Scarce Visitor, Has Bred"
+Grey Heron,"Resident Breeder, Winter Visitor"
+Great Blue Heron,Accidental
+Purple Heron,"Scarce Visitor, Has Bred"
+Great White Egret,"Scarce Visitor, Has Bred"
+Snowy Egret,Accidental
+Little Egret,"Resident Breeder, Passage Visitor"
+Dalmatian Pelican,Accidental
+Osprey,"Migrant Breeder, Passage Visitor"
+Egyptian Vulture,Not Recorded since 1868
+Honey-buzzard,"Migrant Breeder, Passage Visitor"
+Short-toed Eagle,Accidental
+Spotted Eagle,Not Recorded since 1915
+Golden Eagle,Resident Breeder
+Sparrowhawk,"Resident Breeder, Passage/Winter Visitor"
+Goshawk,Re-introduced Breeder
+Marsh Harrier,"Migrant/Resident Breeder, Passage Visitor"
+Hen Harrier,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Northern Harrier,Accidental
+Pallid Harrier,Accidental
+Montagu’s Harrier,"Migrant Breeder, Passage Visitor"
+Red Kite,"Resident/Introduced Breeder, Passage Visitor"
+Black Kite,Scarce Visitor
+White-tailed Eagle,"Re-introduced Breeder, Accidental"
+Rough-legged Buzzard,Passage/Winter Visitor
+Buzzard,"Resident Breeder, Passage/Winter Visitor"
+Barn Owl,Resident Breeder
+Scops Owl,Accidental
+Snowy Owl,"Accidental, Former Breeder"
+Eurasian Eagle-Owl,Escaped (?) Breeder
+Tawny Owl,Resident Breeder
+Hawk Owl,Accidental
+Little Owl,Introduced Breeder
+Tengmalm’s Owl,Accidental
+Long-eared Owl,"Resident Breeder, Passage/Winter Visitor"
+Short-eared Owl,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Hoopoe,"Scarce Visitor, Has Bred"
+Roller,Accidental
+Kingfisher,Migrant/Resident Breeder
+Belted Kingfisher,Accidental
+Blue-cheeked Bee-eater,Accidental
+Bee-eater,"Scarce Visitor, Has Bred"
+Wryneck,"Former Breeder, Scarce Visitor"
+Yellow-bellied Sapsucker,Accidental
+Lesser Spotted Woodpecker,Resident Breeder
+Great Spotted Woodpecker,"Resident Breeder, Scarce Visitor"
+Green Woodpecker,Resident Breeder
+Lesser Kestrel,Accidental
+Kestrel,"Migrant/Resident Breeder, Passage/Winter Visitor"
+American Kestrel,Accidental
+Red-footed Falcon,Scarce Visitor
+Amur Falcon,Accidental
+Eleonora’s Falcon,Accidental
+Merlin,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Hobby,"Migrant Breeder, Passage Visitor"
+Gyrfalcon,Accidental
+Peregrine,"Resident Breeder, Passage/Winter Visitor"
+Ring-necked Parakeet,Introduced Breeder
+Eastern Phoebe,Accidental
+Acadian Flycatcher,Accidental
+Alder Flycatcher,Accidental
+Eastern Kingbird,Accidental
+Brown Shrike,Accidental
+Red-backed Shrike,"Former Breeder, Scarce Visitor"
+Daurian Shrike,Accidental
+Turkestan Shrike,Accidental
+Long-tailed Shrike,Accidental
+Lesser Grey Shrike,Accidental
+Great Grey Shrike,Passage/Winter Visitor
+Woodchat Shrike,Scarce Visitor
+Masked Shrike,Accidental
+Yellow-throated Vireo,Accidental
+Philadelphia Vireo,Accidental
+Red-eyed Vireo,Accidental
+Golden Oriole,"Scarce Breeder, Passage Visitor"
+Jay,Resident Breeder
+Magpie,Resident Breeder
+Nutcracker,Accidental
+Chough,Resident Breeder
+Jackdaw,"Resident Breeder, Winter Visitor"
+Rook,"Resident Breeder, Winter Visitor"
+Carrion Crow,"Resident Breeder, Winter Visitor"
+Hooded Crow,"Resident Breeder, Winter Visitor"
+Raven,Resident Breeder
+Waxwing,Winter Visitor
+Cedar Waxwing,Accidental
+Coal Tit,Resident Breeder
+Crested Tit,Resident Breeder
+Marsh Tit,Resident Breeder
+Willow Tit,Resident Breeder
+Blue Tit,"Resident Breeder, Winter Visitor"
+Great Tit,"Resident Breeder, Winter Visitor"
+Penduline Tit,Scarce Visitor
+Bearded Tit,"Resident Breeder, Passage/Winter Visitor"
+Woodlark,"Resident/Migrant Breeder, Passage Visitor"
+White-winged Lark,Accidental
+Skylark,"Resident Breeder, Passage/Winter Visitor"
+Crested Lark,Accidental
+Shore Lark,"Scarce Breeder, Winter Visitor"
+Short-toed Lark,Scarce Visitor
+Bimaculated Lark,Accidental
+Calandra Lark,Accidental
+Black Lark,Accidental
+Lesser Short-toed Lark,Accidental
+Sand Martin,"Migrant Breeder, Passage Visitor"
+Tree Swallow,Accidental
+Purple Martin,Accidental
+Swallow,"Migrant Breeder, Passage Visitor"
+Crag Martin,Accidental
+House Martin,"Migrant Breeder, Passage Visitor"
+Red-rumped Swallow,Scarce Visitor
+American Cliff Swallow,Accidental
+Cetti’s Warbler,"Resident Breeder, Passage Visitor"
+Long-tailed Tit,Resident Breeder
+Wood Warbler,"Migrant Breeder, Passage Visitor"
+Western Bonelli’s Warbler,Accidental
+Eastern Bonelli’s Warbler,Accidental
+Hume’s Warbler,Accidental
+Yellow-browed Warbler,Passage/Winter Visitor
+Pallas’s Warbler,Scarce Visitor
+Radde’s Warbler,Scarce Visitor
+Dusky Warbler,Scarce Visitor
+Willow Warbler,"Migrant Breeder, Passage Visitor"
+Chiffchaff,"Migrant Breeder, Passage/Winter Visitor"
+Iberian Chiffchaff,"Accidental, Has Bred"
+Eastern Crowned Warbler,Accidental
+Green Warbler,Accidental
+Two-barred Greenish Warbler,Accidental
+Greenish Warbler,Scarce Visitor
+Pale-legged Leaf Warbler,Accidental
+Arctic Warbler,Scarce Visitor
+Great Reed Warbler,Accidental
+Aquatic Warbler,Passage Visitor
+Sedge Warbler,"Migrant Breeder, Passage Visitor"
+Paddyfield Warbler,Accidental
+Blyth’s Reed Warbler,Scarce Visitor
+Reed Warbler,"Migrant Breeder, Passage Visitor"
+Marsh Warbler,"Scarce Visitor, Scarce Breeder"
+Thick-billed Warbler,Accidental
+Booted Warbler,Accidental
+Sykes’s Warbler,Accidental
+Eastern Olivaceous Warbler,Accidental
+Olive-tree Warbler,Accidental
+Melodious Warbler,Scarce Visitor
+Icterine Warbler,"Scarce Visitor, Scarce Breeder"
+Pallas’s Grasshopper Warbler,Accidental
+Lanceolated Warbler,Accidental
+Grasshopper Warbler,"Migrant Breeder, Passage Visitor"
+River Warbler,Accidental
+Savi’s Warbler,"Scarce Visitor, Scarce Breeder"
+Zitting Cisticola,Accidental
+Blackcap,"Migrant Breeder, Passage/Winter Visitor"
+Garden Warbler,"Migrant Breeder, Passage Visitor"
+Barred Warbler,Scarce Visitor
+Lesser Whitethroat,"Migrant Breeder, Passage Visitor"
+Western Orphean Warbler,Accidental
+Eastern Orphean Warbler,Accidental
+Asian Desert Warbler,Accidental
+Whitethroat,"Migrant Breeder, Passage Visitor"
+Dartford Warbler,Resident Breeder
+Marmora’s Warbler,Accidental
+Spectacled Warbler,Accidental
+Western Subalpine Warbler,Scarce Visitor
+Moltoni's Subalpine Warbler,Accidental
+Sardinian Warbler,Accidental
+Rüppell’s Warbler,Accidental
+Firecrest,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Goldcrest,"Resident Breeder, Passage/Winter Visitor"
+Wren,"Resident Breeder, Passage/Winter Visitor"
+Nuthatch,Resident Breeder
+Red-breasted Nuthatch,Accidental
+Wallcreeper,Accidental
+Treecreeper,Resident Breeder
+Short-toed Treecreeper,Accidental
+Grey Catbird,Accidental
+Northern Mockingbird,Accidental
+Brown Thrasher,Accidental
+Rose-coloured Starling,Scarce Visitor
+Starling,"Resident Breeder, Passage/Winter Visitor"
+Siberian Thrush,Accidental
+White’s Thrush,Accidental
+Varied Thrush,Accidental
+Veery,Accidental
+Grey-cheeked Thrush,Accidental
+Swainson’s Thrush,Accidental
+Hermit Thrush,Accidental
+Wood Thrush,Accidental
+Ring Ouzel,"Migrant Breeder, Passage Visitor"
+Blackbird,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Eyebrowed Thrush,Accidental
+Black-throated Thrush,Accidental
+Red-throated Thrush,Accidental
+Naumann's Thrush,Accidental
+Dusky Thrush,Accidental
+Fieldfare,"Scarce Breeder, Passage/Winter Visitor"
+Redwing,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Song Thrush,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Mistle Thrush,"Migrant/Resident Breeder, Passage/Winter Visitor"
+American Robin,Accidental
+Rufous-tailed Scrub Robin,Accidental
+Spotted Flycatcher,"Migrant Breeder, Passage Visitor"
+Asian Brown Flycatcher,Accidental
+Robin,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Siberian Blue Robin,Accidental
+Rufous-tailed Robin,Accidental
+Bluethroat,"Scarce Breeder, Passage Visitor"
+Thrush Nightingale,Accidental
+Nightingale,"Migrant Breeder, Passage Visitor"
+White-throated Robin,Accidental
+Siberian Rubythroat,Accidental
+Red-flanked Bluetail,Scarce Visitor
+Pied Flycatcher,"Migrant Breeder, Passage Visitor"
+Collared Flycatcher,Accidental
+Red-breasted Flycatcher,Scarce Visitor
+Taiga Flycatcher,Accidental
+Black Redstart,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Redstart,"Migrant Breeder, Passage Visitor"
+Moussier’s Redstart,Accidental
+Rock Thrush,Accidental
+Blue Rock Thrush,Accidental
+Whinchat,"Migrant Breeder, Passage Visitor"
+Stonechat,Migrant/Resident Breeder
+Siberian Stonechat,Accidental
+Stejneger's Stonechat,Accidental
+Wheatear,"Migrant Breeder, Passage Visitor"
+Isabelline Wheatear,Accidental
+Desert Wheatear,Accidental
+Black-eared Wheatear,Scarce Visitor
+Pied Wheatear,Accidental
+White-crowned Black Wheatear,Accidental
+Dipper,Resident Breeder
+House Sparrow,Resident Breeder
+Spanish Sparrow,Accidental
+Tree Sparrow,"Resident Breeder, Passage Visitor"
+Rock Sparrow,Accidental
+Alpine Accentor,Accidental
+Siberian Accentor,Accidental
+Dunnock,"Resident Breeder, Passage/Winter Visitor"
+Yellow Wagtail,"Migrant Breeder, Passage Visitor"
+Eastern Yellow Wagtail,Accidental
+Citrine Wagtail,Scarce Visitor
+Grey Wagtail,"Resident Breeder, Passage Visitor"
+Pied Wagtail,"Migrant/Resident Breeder, Passage Visitor"
+Richard’s Pipit,Scarce Visitor
+Blyth’s Pipit,Accidental
+Tawny Pipit,Accidental
+Meadow Pipit,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Tree Pipit,"Migrant Breeder, Passage Visitor"
+Olive-backed Pipit,Scarce Visitor
+Pechora Pipit,Scarce Visitor
+Red-throated Pipit,Accidental
+Buff-bellied Pipit,Accidental
+Water Pipit,Passage/Winter Visitor
+Rock Pipit,"Resident Breeder, Passage/Winter Visitor"
+Chaffinch,"Resident Breeder, Passage/Winter Visitor"
+Brambling,"Scarce Breeder, Passage/Winter Visitor"
+Evening Grosbeak,Accidental
+Hawfinch,"Resident Breeder, Passage Visitor"
+Pine Grosbeak,Accidental
+Bullfinch,"Resident Breeder, Scarce Visitor"
+Trumpeter Finch,Accidental
+Common Rosefinch,"Scarce Breeder, Passage Visitor"
+Greenfinch,"Resident Breeder, Winter Visitor"
+Twite,"Migrant/Resident Breeder, Winter Visitor"
+Linnet,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Common Redpoll,"Scarce Breeder, Passage/Winter Visitor"
+Lesser Redpoll,Migrant/Resident Breeder
+Arctic Redpoll,Scarce Visitor
+Parrot Crossbill,"Scarce Visitor, Occasional Breeder"
+Scottish Crossbill,Endemic Breeder
+Common Crossbill,"Migrant/Resident Breeder, Passage/Winter Visitor"
+Two-barred Crossbill,Scarce Visitor
+Goldfinch,Migrant/Resident Breeder
+Citril Finch,Accidental
+Serin,"Scarce Visitor, Has bred"
+Siskin,"Resident Breeder, Passage/Winter Visitor"
+Lapland Bunting,"Scarce Breeder, Passage/Winter Visitor"
+Snow Bunting,"Resident Breeder, Passage/Winter Visitor"
+Corn Bunting,"Resident Breeder, Passage Visitor"
+Yellowhammer,"Resident Breeder, Passage/Winter Visitor"
+Pine Bunting,Accidental
+Rock Bunting,Accidental
+Ortolan Bunting,Scarce Visitor
+Cretzschmar’s Bunting,Accidental
+Cirl Bunting,Resident Breeder
+Chestnut-eared Bunting,Accidental
+Little Bunting,Scarce Visitor
+Yellow-browed Bunting,Accidental
+Rustic Bunting,Accidental
+Yellow-breasted Bunting,Accidental
+Chestnut Bunting,Accidental
+Black-headed Bunting,Accidental
+Black-faced Bunting,Accidental
+Pallas’s Reed Bunting,Accidental
+Reed Bunting,"Resident Breeder, Passage/Winter Visitor"
+Song Sparrow,Accidental
+White-crowned Sparrow,Accidental
+White-throated Sparrow,Accidental
+Dark-eyed Junco,Accidental
+Savannah Sparrow,Accidental
+Lark Sparrow,Accidental
+Eastern Towhee,Accidental
+Bobolink,Accidental
+Baltimore Oriole,Accidental
+Red-winged Blackbird,Accidental
+Brown-headed Cowbird,Accidental
+Ovenbird,Accidental
+Northern Waterthrush,Accidental
+Golden-winged Warbler,Accidental
+Black-and-white Warbler,Accidental
+Tennessee Warbler,Accidental
+Common Yellowthroat,Accidental
+Hooded Warbler,Accidental
+American Redstart,Accidental
+Cape May Warbler,Accidental
+Northern Parula,Accidental
+Magnolia Warbler,Accidental
+Bay-breasted Warbler,Accidental
+Blackburnian Warbler,Accidental
+Yellow Warbler,Accidental
+Chestnut-sided Warbler,Accidental
+Blackpoll Warbler,Accidental
+Yellow-rumped Warbler,Accidental
+Wilson’s Warbler,Accidental
+Summer Tanager,Accidental
+Scarlet Tanager,Accidental
+Rose-breasted Grosbeak,Accidental
+Indigo Bunting,Accidental

@@ -1,64 +1,63 @@
 import requests
+import os
+from dotenv import load_dotenv
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import folium
 from folium.plugins import MarkerCluster
+import webbrowser
 
-# cookies data extracted from cURL for login data
-cookies = {
-    '__utma': '161274942.58113055.1719420471.1719420471.1719420471.1',
-    '__utmb': '161274942.2.10.1719420471',
-    '__utmc': '161274942',
-    '__utmz': '161274942.1719420471.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)',
-    'ckFirstPageLoad': 'yes',
-    'ckPrevEmail': 'ephraim%40ephraimperfect%2Eco%2Euk',
-    'ckPrevPWD': '16891689',
-    '__utmt': '1',
-    'ASPSESSIONIDACQDARTS': 'CDKBMMMBEGMNONLBEAHANOMP',
-    'ckCookieNotice': '2018%2D01%2D01',
+# Start a session so cookies persist
+session = requests.Session()
+
+# URLs
+login_url = "https://www.rarebirdalert.co.uk/RealData/Login.asp"
+home_url = "https://www.rarebirdalert.co.uk/RealData/myhome.asp"
+data_url = "https://www.rarebirdalert.co.uk/RealData/rssnewsitems.asp"
+
+load_dotenv()
+
+include_yesterday = True
+
+def get_login():
+    return os.getenv("login")
+
+
+def get_password():
+    return os.getenv("password")
+
+
+payload = {
+    "txtEmailLogin": get_login(),
+    "txtPassword": get_password(),
+    "btnLogin": "Login"
 }
 
-headers = {
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    'Sec-Fetch-Site': 'same-origin',
-    # 'Cookie': '__utma=161274942.58113055.1719420471.1719420471.1719420471.1; __utmb=161274942.2.10.1719420471; __utmc=161274942; __utmz=161274942.1719420471.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ckFirstPageLoad=yes; ckPrevEmail=ephraim%40ephraimperfect%2Eco%2Euk; ckPrevPWD=16891689; __utmt=1; ASPSESSIONIDACQDARTS=CDKBMMMBEGMNONLBEAHANOMP; ckCookieNotice=2018%2D01%2D01',
-    # 'Accept-Encoding': 'gzip, deflate, br',
-    'Referer': 'https://www.rarebirdalert.co.uk/v2/Content/index.aspx',
-    'Sec-Fetch-Mode': 'navigate',
-    'Host': 'www.rarebirdalert.co.uk',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3 Safari/605.1.15',
-    'Accept-Language': 'en-GB,en;q=0.9',
-    'Sec-Fetch-Dest': 'document',
-    'Connection': 'keep-alive',
-}
+resp = session.post(login_url, data=payload, allow_redirects=True)
 
-# parse the html content
-response = requests.get('http://www.rarebirdalert.co.uk/RealData/rssnewsitems.asp', cookies=cookies, headers=headers).text
-soup = bs(response, 'html.parser')
+if "myhome.asp" in resp.url or "Logout" in resp.text:
+    print("Logged in successfully")
+else:
+    print("Login failed, check login details")
 
-# Find the table element
-table = soup.find('table', attrs = {"width" : "650"})
+r = session.get(data_url)
 
-# Extract the data from the cells
+response = session.get(data_url)
+soup = bs(response.text, 'html.parser')
+
+table = soup.find('table', attrs={"width": "650"})
 data = []
 
 for row in table.find_all('tr'):
-
    cols = row.find_all('td')
-
-   # Extracting the table headers
    if len(cols) == 0:
        cols = row.find_all('th')
-
    cols = [ele.text.strip() for ele in cols]
-
    data.append([ele for ele in cols if ele])  # Get rid of empty values
 
 # create pandas dataframe of content
-df_na = pd.DataFrame(data, columns = ['data'])
+df_na = pd.DataFrame(data, columns=['data'])
 new_df = df_na.dropna()
-
-print(new_df)
 
 # split bird data rows from info rows into 2 columns
 df = pd.DataFrame({'data':new_df['data'].iloc[::2].values, 'Info':new_df['data'].iloc[1::2].values})
@@ -70,8 +69,11 @@ split_bird = split_data['Bird'].str.split('  ', expand=True).rename(columns={0
 # concat all RBA data to one dataframe
 complete_data = pd.concat([split_bird['Time'],split_bird['Bird'],split_data['Site'],split_data['County'],df['Info']], sort=False, axis=1)
 
-# Only accept today's data
-today_data = complete_data[~complete_data.Time.str.contains("Yesterday")]
+if include_yesterday:
+    today_data = complete_data
+else:
+    # Only accept today's data
+    today_data = complete_data[~complete_data.Time.str.contains("Yesterday")]
 
 # extract coordinate information from dataframe
 coords = today_data['Info'].str.extract(r"(\-?(90|[0-8]?[0-9]\.[0-9]{0,6}))\,(\-?(180|(1[0-7][0-9]|[0-9]{0,2})\.[0-9]{0,6}))").rename(columns={0:'lat',1:'abs_lat',2:'lng',3:'abs_lng'})
@@ -108,3 +110,9 @@ for i,row in data_loc.iterrows():
     folium.Marker(location=[lat,lng], popup = popup, icon = folium.Icon(color=color)).add_to(markerCluster)
 
 m.save('index.html')
+
+file_path = 'index.html'  # relative path
+abs_path = os.path.abspath(file_path)
+url = "file://" + abs_path
+
+webbrowser.open(url)
