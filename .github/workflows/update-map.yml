@@ -1,0 +1,56 @@
+name: Update bird map
+
+on:
+  # Manual only: Actions tab -> "Update bird map" -> "Run workflow"
+  workflow_dispatch:
+    inputs:
+      include_yesterday:
+        description: "Include yesterday's sightings"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirement.txt
+
+      - run: pip install -r requirement.txt
+
+      - name: Build map
+        env:
+          # main.py reads these exact lowercase names, same as the local .env
+          login: ${{ secrets.RBA_LOGIN }}
+          password: ${{ secrets.RBA_PASSWORD }}
+          OUTPUT_DIR: site
+          INCLUDE_YESTERDAY: ${{ inputs.include_yesterday }}
+        run: python main.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
