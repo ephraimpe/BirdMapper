@@ -40,6 +40,7 @@ jobs:
           login_url: ${{ secrets.LOGIN_URL }}
           home_url: ${{ secrets.HOME_URL }}
           data_url: ${{ secrets.DATA_URL }}
+          WORKER_URL: ${{ secrets.WORKER_URL }}
           OUTPUT_DIR: site
           INCLUDE_YESTERDAY: ${{ inputs.include_yesterday }}
         run: python main.py

@@ -1,0 +1,127 @@
+<!-- Added to the map by main.py: shows when the map was built and, when
+     WORKER_URL is set, an Update button that starts the GitHub workflow -->
+<style>
+  #mapRefresh { position: fixed; top: 10px; right: 10px; z-index: 1001; max-width: calc(100vw - 20px);
+    display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+    font: 14px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #1d2a24; }
+  #mapRefresh [hidden] { display: none !important; }
+  #mapRefresh .mr-chip { display: flex; align-items: center; gap: 8px; background: #fff;
+    border-radius: 6px; box-shadow: 0 1px 4px rgba(0, 0, 0, .3); padding: 5px 6px 5px 10px; }
+  #mapRefresh button { font: inherit; font-weight: 600; border: 0; border-radius: 5px;
+    padding: 6px 12px; background: #24614a; color: #fff; cursor: pointer; }
+  #mapRefresh button:disabled { opacity: .6; cursor: default; }
+  #mapRefresh button:focus-visible, #mapRefresh input:focus-visible { outline: 2px solid #24614a; outline-offset: 2px; }
+  #mapRefresh .mr-panel { display: grid; gap: 10px; width: 250px; max-width: 100%; box-sizing: border-box;
+    background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, .3); padding: 12px; }
+  #mapRefresh .mr-panel label { display: grid; gap: 4px; }
+  #mapRefresh .mr-panel label.mr-check { display: flex; align-items: center; gap: 8px; }
+  #mapRefresh input[type=password] { font-size: 16px; padding: 7px 8px; border: 1px solid #9aa8a2;
+    border-radius: 6px; width: 100%; box-sizing: border-box; }
+  #mapRefresh .mr-msg { font-size: 13px; color: #44524c; min-height: 1em; }
+  #mapRefresh .mr-msg.mr-err { color: #a1261b; }
+</style>
+<div id="mapRefresh">
+  <div class="mr-chip">
+    <span>Updated {{BUILT_AT}}</span>
+    <button id="mrOpen" type="button" aria-expanded="false" aria-controls="mrPanel" hidden>Update</button>
+  </div>
+  <form class="mr-panel" id="mrPanel" hidden>
+    <label>Passphrase
+      <input id="mrPass" type="password" autocomplete="current-password" required>
+    </label>
+    <label class="mr-check"><input id="mrYesterday" type="checkbox"> Include yesterday's sightings</label>
+    <button id="mrRun" type="submit">Update map</button>
+    <div class="mr-msg" id="mrMsg" role="status"></div>
+  </form>
+</div>
+<script>
+(function () {
+  var WORKER = {{WORKER_URL}};
+  var INCLUDE_YESTERDAY = {{INCLUDE_YESTERDAY}};
+  if (!WORKER) return;
+  WORKER = WORKER.replace(/\/+$/, "");
+
+  var $ = function (id) { return document.getElementById(id); };
+  var open = $("mrOpen"), panel = $("mrPanel"), pass = $("mrPass"),
+      yesterday = $("mrYesterday"), run = $("mrRun"), msg = $("mrMsg");
+
+  open.hidden = false;
+  yesterday.checked = INCLUDE_YESTERDAY;
+  try { pass.value = localStorage.getItem("mapRefreshPass") || ""; } catch (e) {}
+
+  open.addEventListener("click", function () {
+    panel.hidden = !panel.hidden;
+    open.setAttribute("aria-expanded", String(!panel.hidden));
+    if (!panel.hidden && !pass.value) pass.focus();
+  });
+
+  function say(text, isError) {
+    msg.textContent = text;
+    msg.className = "mr-msg" + (isError ? " mr-err" : "");
+  }
+
+  function call(path, extra) {
+    var body = { passphrase: pass.value };
+    for (var k in extra || {}) body[k] = extra[k];
+    return fetch(WORKER + path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (data) {
+        if (!res.ok) throw new Error(data.error || "The update service answered " + res.status);
+        return data;
+      });
+    }, function () {
+      throw new Error("Couldn't reach the update service. Check your connection.");
+    });
+  }
+
+  panel.addEventListener("submit", function (e) {
+    e.preventDefault();
+    run.disabled = true;
+    say("Starting update…");
+    var previousId;
+    // note the latest run first, so the new one can be told apart from it
+    call("/status").then(function (latest) {
+      previousId = latest.id;
+      return call("/run", { include_yesterday: yesterday.checked });
+    }).then(function () {
+      try { localStorage.setItem("mapRefreshPass", pass.value); } catch (e) {}
+      say("Update started. This usually takes 1 to 2 minutes.");
+      poll(previousId, 0);
+    }).catch(function (err) {
+      run.disabled = false;
+      say(err.message, true);
+    });
+  });
+
+  function poll(previousId, attempt) {
+    if (attempt >= 60) {
+      run.disabled = false;
+      say("Still not finished after 10 minutes. Check the Actions tab on GitHub.", true);
+      return;
+    }
+    setTimeout(function () {
+      call("/status").then(function (latest) {
+        if (!latest.id || latest.id === previousId) {
+          say("Waiting for GitHub to start the update…");
+          return poll(previousId, attempt + 1);
+        }
+        if (latest.status !== "completed") {
+          say(latest.status === "queued" ? "Update queued…" : "Updating the map…");
+          return poll(previousId, attempt + 1);
+        }
+        if (latest.conclusion === "success") {
+          say("Done. Loading the new map…");
+          // the query string skips the cached copy of the page
+          setTimeout(function () { location.href = location.pathname + "?t=" + Date.now(); }, 3000);
+        } else {
+          run.disabled = false;
+          say("The update failed (" + latest.conclusion + "). Check the Actions tab on GitHub.", true);
+        }
+      }).catch(function () { poll(previousId, attempt + 1); });
+    }, 10000);
+  }
+})();
+</script>

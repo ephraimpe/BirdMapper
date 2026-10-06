@@ -7,6 +7,10 @@ import folium
 from folium.plugins import MarkerCluster
 import webbrowser
 import sys
+import json
+import html
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # Start a session so cookies persist
 session = requests.Session()
@@ -119,6 +123,19 @@ for i,row in data_loc.iterrows():
         color = 'green'
 
     folium.Marker(location=[lat,lng], popup = popup, icon = folium.Icon(color=color)).add_to(markerCluster)
+
+# build time and, when WORKER_URL is set, the Update button (see refresh_panel.html)
+try:
+    built_at = datetime.now(ZoneInfo("Europe/London"))
+except Exception:
+    built_at = datetime.now().astimezone()  # no time zone data on this machine
+with open('refresh_panel.html', encoding='utf-8') as f:
+    refresh_panel = f.read()
+refresh_panel = (refresh_panel
+    .replace('{{BUILT_AT}}', html.escape(built_at.strftime('%d %b %Y, %H:%M')))
+    .replace('{{WORKER_URL}}', json.dumps(os.getenv("WORKER_URL") or ""))
+    .replace('{{INCLUDE_YESTERDAY}}', json.dumps(include_yesterday)))
+m.get_root().html.add_child(folium.Element(refresh_panel))
 
 # OUTPUT_DIR lets the GitHub Actions run save the map into the folder it publishes
 output_dir = os.getenv("OUTPUT_DIR", ".")
